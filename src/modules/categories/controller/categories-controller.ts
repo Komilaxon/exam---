@@ -31,8 +31,7 @@ class CategoriesController {
 
       res.status(201).json({ msg: "CREATED", data: category, error: false });
     } catch (error: any) {
-      error.code = 500;
-      next(error);
+      res.status(500).json({ msg: error.message });
     }
   }
 
