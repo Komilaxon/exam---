@@ -8,10 +8,7 @@ class CategoriesController {
     next: NextFunction
   ): Promise<void> {
     try {
-      const categories = await categoryModel
-        .find()
-        .populate("sub_categories")
-        .exec();
+      const categories = await categoryModel.find().exec();
       res.status(200).json({ msg: "OK", data: categories, error: false });
     } catch (error: any) {
       error.code = 500;

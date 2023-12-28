@@ -14,10 +14,7 @@ class CategoriesController {
     getCategories(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const categories = yield categories_model_js_1.categoryModel
-                    .find()
-                    .populate("sub_categories")
-                    .exec();
+                const categories = yield categories_model_js_1.categoryModel.find().exec();
                 res.status(200).json({ msg: "OK", data: categories, error: false });
             }
             catch (error) {
