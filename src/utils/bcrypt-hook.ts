@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import { saltOrRounds } from "./constants.js";
 
 class BcryptHelper {
@@ -7,7 +7,7 @@ class BcryptHelper {
   }
 
   compareSync(originalPass: string | Buffer, hashedPass: string) {
-    return bcrypt.compareSync(originalPass, hashedPass);
+    return bcrypt.compareSync(originalPass as string, hashedPass);
   }
 }
 
