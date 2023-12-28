@@ -16,7 +16,7 @@ exports.dbConnection = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 const dbConnection = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        yield mongoose_1.default.connect("mongodb://127.0.0.1:27017/exam");
+        yield mongoose_1.default.connect(process.env.ONLINE_MONGO);
         console.log("db connected successfully...");
     }
     catch (error) {
